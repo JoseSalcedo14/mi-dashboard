@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "29 Jun 2026, 00:19",
+  "updated": "29 Jun 2026, 00:22",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,16 +24,8 @@
   ],
   "calendar": [
     {
-      "title": "Standup equipo",
-      "meta": "09:30 – 09:45"
-    },
-    {
-      "title": "Call con proveedor",
-      "meta": "13:00 – 13:30"
-    },
-    {
-      "title": "Gym",
-      "meta": "19:00 – 20:00"
+      "title": "algo",
+      "meta": "Mon 29, 01:30"
     }
   ],
   "finance": {
