@@ -1,0 +1,97 @@
+{
+  "title": "Mi Dashboard",
+  "owner": "Jose",
+  "updated": "28 Jun 2026, 23:07",
+  "tasks": [
+    {
+      "title": "Cerrar propuesta cliente X",
+      "meta": "Proyecto Alfa",
+      "status": "due",
+      "due": "Hoy"
+    },
+    {
+      "title": "Revisar diseño dashboard",
+      "meta": "Personal",
+      "status": "soon",
+      "due": "Mañana"
+    },
+    {
+      "title": "Enviar factura mayo",
+      "meta": "Admin",
+      "status": "ok",
+      "due": "3 jun"
+    }
+  ],
+  "calendar": [
+    {
+      "title": "Standup equipo",
+      "meta": "09:30 – 09:45"
+    },
+    {
+      "title": "Call con proveedor",
+      "meta": "13:00 – 13:30"
+    },
+    {
+      "title": "Gym",
+      "meta": "19:00 – 20:00"
+    }
+  ],
+  "finance": {
+    "summary": [
+      {
+        "k": "Balance mes",
+        "v": "+1,240",
+        "pos": true
+      },
+      {
+        "k": "Gastos",
+        "v": "-820",
+        "pos": false
+      }
+    ],
+    "rows": [
+      {
+        "label": "Ingresos",
+        "amount": "+2,060",
+        "pos": true
+      },
+      {
+        "label": "Suscripciones",
+        "amount": "-180",
+        "pos": false
+      },
+      {
+        "label": "Comida",
+        "amount": "-310",
+        "pos": false
+      },
+      {
+        "label": "Transporte",
+        "amount": "-90",
+        "pos": false
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "k": "Pasos hoy",
+      "v": "7,420",
+      "pct": 74
+    },
+    {
+      "k": "Agua (vasos)",
+      "v": "5 / 8",
+      "pct": 62
+    },
+    {
+      "k": "Tareas hechas",
+      "v": "3 / 5",
+      "pct": 60
+    },
+    {
+      "k": "Foco (h)",
+      "v": "4.2",
+      "pct": 84
+    }
+  ]
+}
