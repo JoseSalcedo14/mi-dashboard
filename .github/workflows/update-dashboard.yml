@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Instalar dependencias
+        run: pip install icalendar recurring_ical_events
+
       - name: Generar data.json
         env:
           CAL_ICS_URL: ${{ secrets.CAL_ICS_URL }}
