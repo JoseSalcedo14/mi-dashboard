@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "29 Jun 2026, 00:37 UTC",
+  "updated": "29 Jun 2026, 00:48 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -14,12 +14,6 @@
       "meta": "Personal",
       "status": "soon",
       "due": "Mañana"
-    },
-    {
-      "title": "Enviar factura mayo",
-      "meta": "Admin",
-      "status": "ok",
-      "due": "3 jun"
     }
   ],
   "calendar": [
@@ -64,13 +58,8 @@
     "rows": [
       {
         "label": "Ingresos",
-        "amount": "+2,060",
+        "amount": "2.06",
         "pos": true
-      },
-      {
-        "label": "Suscripciones",
-        "amount": "-180",
-        "pos": false
       },
       {
         "label": "Comida",
@@ -94,16 +83,6 @@
       "k": "Agua (vasos)",
       "v": "5 / 8",
       "pct": 62
-    },
-    {
-      "k": "Tareas hechas",
-      "v": "3 / 5",
-      "pct": 60
-    },
-    {
-      "k": "Foco (h)",
-      "v": "4.2",
-      "pct": 84
     }
   ]
 }
