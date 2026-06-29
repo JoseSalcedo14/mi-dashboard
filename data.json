@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "29 Jun 2026, 00:48 UTC",
+  "updated": "29 Jun 2026, 00:55 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -10,10 +10,16 @@
       "due": "Hoy"
     },
     {
-      "title": "Revisar diseño dashboard",
+      "title": "eso",
       "meta": "Personal",
       "status": "soon",
-      "due": "Mañana"
+      "due": "Hoy"
+    },
+    {
+      "title": "Terminar Dashboard",
+      "meta": "Personal",
+      "status": "due",
+      "due": "Hoy"
     }
   ],
   "calendar": [
@@ -58,7 +64,7 @@
     "rows": [
       {
         "label": "Ingresos",
-        "amount": "2.06",
+        "amount": "3",
         "pos": true
       },
       {
