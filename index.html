@@ -112,7 +112,7 @@
 <script>
 // ====== CONFIG: pega aquí tus URLs (la del Sheet ya la tienes; la del script va tras desplegarlo) ======
 const SHEET_CSV_URL = "";   // opcional: tu URL pública que termina en output=csv (lectura en vivo)
-const APPS_SCRIPT_URL = ""; // pega la URL del Apps Script (/exec) para activar la edición
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwuHaQw1NCIDnibyqdAQgqVlhA73bC1Q0QN44kWSzHW0YE05s7e1ljHw__pzmns9WhB/exec"; // Apps Script web app
 // =====================================================================================================
 
 const SAMPLE = {title:"Mi Dashboard",owner:"Jose",updated:"(ejemplo)",
@@ -214,11 +214,4 @@ let tt;function toast(m){const e=document.getElementById('toast');e.textContent=
 
 async function load(){
   let base=SAMPLE;
-  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)base=await r.json();}catch(e){}
-  render(base);
-  if(SHEET_CSV_URL){try{const r=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(r.ok){render(sheetToData(await r.text(),base));}}catch(e){}}
-}
-load();
-</script>
-</body>
-</html>
+  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)base=await
