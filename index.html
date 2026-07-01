@@ -6,40 +6,58 @@
 <title>Mi Dashboard</title>
 <style>
   :root{
-    --bg:#0f1115; --card:#181b22; --card2:#1f232c; --line:#2a2f3a;
-    --txt:#e7e9ee; --muted:#9aa3b2; --accent:#6ea8fe; --green:#4ade80;
-    --red:#f87171; --amber:#fbbf24; --radius:16px;
+    --bg:#0e1014; --card:#171a21; --card-hi:#1e222c; --line:#272c38;
+    --txt:#eef1f6; --muted:#9aa4b4; --accent:#6ea8fe; --accent-d:#2b3a55;
+    --green:#4ade80; --red:#f87171; --amber:#fbbf24; --r:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--txt);line-height:1.5;padding:24px;max-width:1200px;margin:0 auto}
-  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:24px}
-  h1{font-size:26px;font-weight:700}
+    background:radial-gradient(1200px 600px at 50% -10%,#16202e 0%,var(--bg) 55%);
+    color:var(--txt);line-height:1.5;padding:28px 24px;max-width:1200px;margin:0 auto;min-height:100vh}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+  h1{font-size:27px;font-weight:700;letter-spacing:-.02em}
   .sub{color:var(--muted);font-size:13px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .card h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
-  .item:last-child{border-bottom:none}
-  .item .l{display:flex;flex-direction:column}
-  .item .t{font-size:14px}
+  .pill-top{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);
+    background:var(--card);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(74,222,128,.15)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 8px;
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-3px);border-color:#39435a;box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
+  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+    margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:space-between}
+  .h-l{display:flex;align-items:center;gap:8px}
+  .edit-btn{cursor:pointer;color:var(--muted);font-size:12px;background:transparent;border:1px solid var(--line);
+    border-radius:8px;padding:3px 9px;transition:all .15s ease}
+  .edit-btn:hover{color:var(--txt);border-color:var(--accent);background:var(--accent-d)}
+  .item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 10px;margin:0 -10px;
+    border-radius:10px;transition:background .15s ease}
+  .item:hover{background:var(--card-hi)}
+  .item .l{display:flex;flex-direction:column;min-width:0}
+  .item .t{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .item .m{font-size:12px;color:var(--muted)}
-  .tag{font-size:11px;padding:2px 8px;border-radius:999px;background:var(--card2);color:var(--muted)}
-  .tag.due{background:rgba(248,113,113,.15);color:var(--red)}
-  .tag.soon{background:rgba(251,191,36,.15);color:var(--amber)}
-  .tag.ok{background:rgba(74,222,128,.15);color:var(--green)}
-  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .metric{background:var(--card2);border-radius:12px;padding:14px}
-  .metric .v{font-size:24px;font-weight:700}
-  .metric .k{font-size:12px;color:var(--muted)}
-  .bar{height:8px;background:var(--card2);border-radius:999px;overflow:hidden;margin-top:8px}
-  .bar>span{display:block;height:100%;background:var(--accent)}
-  .fin-row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px}
-  .fin-row .amt{font-variant-numeric:tabular-nums}
-  .pos{color:var(--green)} .neg{color:var(--red)}
-  .empty{color:var(--muted);font-size:13px;font-style:italic}
-  footer{margin-top:28px;text-align:center;color:var(--muted);font-size:12px}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px}
+  .tag{font-size:11px;padding:2px 9px;border-radius:999px;background:var(--card-hi);color:var(--muted);white-space:nowrap}
+  .tag.due{background:rgba(248,113,113,.16);color:var(--red)} .tag.soon{background:rgba(251,191,36,.16);color:var(--amber)} .tag.ok{background:rgba(74,222,128,.16);color:var(--green)}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .metric{background:var(--card-hi);border-radius:12px;padding:13px;transition:transform .15s ease}
+  .metric:hover{transform:scale(1.03)}
+  .metric .v{font-size:22px;font-weight:700} .metric .k{font-size:12px;color:var(--muted)}
+  .bar{height:7px;background:#0f131a;border-radius:999px;overflow:hidden;margin-top:8px}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#9bc0ff);transition:width .5s ease}
+  .fin-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;margin:0 -10px;border-radius:10px;font-size:14px;transition:background .15s ease}
+  .fin-row:hover{background:var(--card-hi)}
+  .amt{font-variant-numeric:tabular-nums} .pos{color:var(--green)} .neg{color:var(--red)}
+  .empty{color:var(--muted);font-size:13px;font-style:italic;padding:6px 0}
+  .del{cursor:pointer;color:var(--muted);border:none;background:transparent;font-size:15px;line-height:1;padding:2px 6px;border-radius:6px;transition:all .15s ease}
+  .del:hover{color:var(--red);background:rgba(248,113,113,.12)}
+  .addrow{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0 6px;border-top:1px dashed var(--line);margin-top:6px}
+  .addrow input,.addrow select{background:#0f131a;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 8px;font-size:13px;flex:1;min-width:70px}
+  .addrow button{background:var(--accent);color:#08121f;border:none;border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
+  .addrow button:hover{filter:brightness(1.08)}
+  .hidden{display:none}
+  footer{margin-top:26px;text-align:center;color:var(--muted);font-size:12px}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--card-hi);border:1px solid var(--line);color:var(--txt);padding:10px 16px;border-radius:10px;font-size:13px;opacity:0;transition:opacity .25s ease;pointer-events:none}
+  .toast.show{opacity:1}
 </style>
 </head>
 <body>
@@ -48,110 +66,159 @@
     <h1 id="title">Mi Dashboard</h1>
     <div class="sub" id="owner"></div>
   </div>
-  <div class="sub"><span class="dot"></span>Actualizado: <span id="updated">—</span></div>
+  <div class="pill-top"><span class="dot"></span>Actualizado: <span id="updated">—</span></div>
 </header>
 
 <div class="grid">
-  <section class="card">
-    <h2>✅ Tareas / Proyectos</h2>
+  <section class="card" id="card-tasks">
+    <h2><span class="h-l">✅ Tareas / Proyectos</span><button class="edit-btn" data-sec="tasks">Editar</button></h2>
     <div id="tasks"></div>
+    <div class="addrow hidden" id="add-tasks">
+      <input id="t-title" placeholder="Tarea"><input id="t-meta" placeholder="Proyecto">
+      <input id="t-due" placeholder="Cuándo" style="max-width:80px">
+      <select id="t-status"><option value="ok">ok</option><option value="soon">soon</option><option value="due">due</option></select>
+      <button data-add="tasks">Añadir</button>
+    </div>
   </section>
 
   <section class="card">
-    <h2>📅 Calendario</h2>
+    <h2><span class="h-l">📅 Calendario</span><span class="sub" style="font-size:11px">Google Calendar</span></h2>
     <div id="calendar"></div>
   </section>
 
-  <section class="card">
-    <h2>💰 Finanzas</h2>
+  <section class="card" id="card-finance">
+    <h2><span class="h-l">💰 Finanzas</span><button class="edit-btn" data-sec="finance">Editar</button></h2>
     <div id="finance"></div>
+    <div class="addrow hidden" id="add-finance">
+      <input id="f-label" placeholder="Concepto"><input id="f-value" placeholder="Monto (ej. -50)" style="max-width:110px">
+      <button data-add="finance">Añadir</button>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>📊 Métricas / Hábitos</h2>
+  <section class="card" id="card-metrics">
+    <h2><span class="h-l">📊 Métricas / Hábitos</span><button class="edit-btn" data-sec="metrics">Editar</button></h2>
     <div id="metrics" class="metrics"></div>
+    <div class="addrow hidden" id="add-metrics">
+      <input id="m-title" placeholder="Métrica"><input id="m-value" placeholder="Valor" style="max-width:90px">
+      <input id="m-pct" placeholder="%" style="max-width:60px">
+      <button data-add="metrics">Añadir</button>
+    </div>
   </section>
 </div>
 
-<footer>Se actualiza solo vía GitHub Actions · Independiente de cualquier suscripción</footer>
+<footer id="foot">Se actualiza solo · Independiente de cualquier suscripción</footer>
+<div class="toast" id="toast"></div>
 
 <script>
-// Fallback de ejemplo para que el dashboard funcione aunque no haya data.json todavía.
-const SAMPLE = {
-  title:"Mi Dashboard", owner:"Jose", updated:"(datos de ejemplo)",
-  tasks:[
-    {title:"Cerrar propuesta cliente X", meta:"Proyecto Alfa", status:"due", due:"Hoy"},
-    {title:"Revisar diseño dashboard", meta:"Personal", status:"soon", due:"Mañana"},
-    {title:"Enviar factura mayo", meta:"Admin", status:"ok", due:"3 jun"}
-  ],
-  calendar:[
-    {title:"Standup equipo", meta:"09:30 – 09:45"},
-    {title:"Call con proveedor", meta:"13:00 – 13:30"},
-    {title:"Gym", meta:"19:00 – 20:00"}
-  ],
-  finance:{
-    summary:[{k:"Balance mes",v:"+1,240",pos:true},{k:"Gastos",v:"-820",pos:false}],
-    rows:[
-      {label:"Ingresos",amount:"+2,060",pos:true},
-      {label:"Suscripciones",amount:"-180",pos:false},
-      {label:"Comida",amount:"-310",pos:false},
-      {label:"Transporte",amount:"-90",pos:false}
-    ]
-  },
-  metrics:[
-    {k:"Pasos hoy",v:"7,420",pct:74},
-    {k:"Agua (vasos)",v:"5 / 8",pct:62},
-    {k:"Tareas hechas",v:"3 / 5",pct:60},
-    {k:"Foco (h)",v:"4.2",pct:84}
-  ]
-};
+// ====== CONFIG: pega aquí tus URLs (la del Sheet ya la tienes; la del script va tras desplegarlo) ======
+const SHEET_CSV_URL = "";   // opcional: tu URL pública que termina en output=csv (lectura en vivo)
+const APPS_SCRIPT_URL = ""; // pega la URL del Apps Script (/exec) para activar la edición
+// =====================================================================================================
 
-function tag(s,due){
-  const cls = s==='due'?'due':s==='soon'?'soon':'ok';
-  return `<span class="tag ${cls}">${due||''}</span>`;
+const SAMPLE = {title:"Mi Dashboard",owner:"Jose",updated:"(ejemplo)",
+  tasks:[{title:"Cerrar propuesta",meta:"Alfa",status:"due",due:"Hoy"},{title:"Revisar diseño",meta:"Personal",status:"soon",due:"Mañana"}],
+  calendar:[{title:"Standup",meta:"lun 29 jun, 09:30"},{title:"Gym",meta:"lun 29 jun, 19:00"}],
+  finance:{summary:[{k:"Balance mes",v:"+1,240",pos:true},{k:"Gastos",v:"-820",pos:false}],rows:[{label:"Ingresos",amount:"+2,060",pos:true},{label:"Comida",amount:"-310",pos:false}]},
+  metrics:[{k:"Pasos hoy",v:"7,420",pct:74},{k:"Foco (h)",v:"4.2",pct:84}]};
+
+let DATA = null;
+
+function csvParse(text){
+  const rows=[];let row=[],cur="",q=false;
+  for(let i=0;i<text.length;i++){const c=text[i];
+    if(q){ if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c; }
+    else { if(c==='"')q=true; else if(c===',' ){row.push(cur);cur="";} else if(c==='\n'){row.push(cur);rows.push(row);row=[];cur="";} else if(c!=='\r')cur+=c; }
+  }
+  if(cur!==""||row.length){row.push(cur);rows.push(row);}
+  return rows;
 }
+function sheetToData(text,base){
+  const rows=csvParse(text); if(!rows.length)return base;
+  const head=rows[0].map(h=>h.trim().toLowerCase());
+  const idx=n=>head.indexOf(n);
+  const tasks=[],fin=[],met=[];
+  for(let i=1;i<rows.length;i++){const r=rows[i];if(!r.length)continue;
+    const sec=(r[idx("section")]||"").trim().toLowerCase();
+    const title=(r[idx("title")]||"").trim(),meta=(r[idx("meta")]||"").trim(),value=(r[idx("value")]||"").trim(),status=(r[idx("status")]||"").trim();
+    if(!sec)continue;
+    if(sec==="tareas"||sec==="tasks")tasks.push({title,meta,status:status||"ok",due:value});
+    else if(sec==="finanzas"||sec==="finance")fin.push({label:title,amount:value,pos:!value.startsWith("-")});
+    else if(sec==="metricas"||sec==="métricas"||sec==="metrics")met.push({k:title,v:value,pct:parseInt((meta||"0").replace(/[^\d.]/g,""))||0});
+  }
+  const d=JSON.parse(JSON.stringify(base));
+  if(tasks.length)d.tasks=tasks; if(fin.length){d.finance=d.finance||{};d.finance.rows=fin;} if(met.length)d.metrics=met;
+  return d;
+}
+
+function tag(s){const c=s==='due'?'due':s==='soon'?'soon':'ok';return `<span class="tag ${c}">${s||'ok'}</span>`;}
+const editable={tasks:false,finance:false,metrics:false};
 
 function render(d){
-  document.getElementById('title').textContent = d.title || 'Mi Dashboard';
-  document.getElementById('owner').textContent = d.owner ? `de ${d.owner}` : '';
-  document.getElementById('updated').textContent = d.updated || '—';
+  DATA=d;
+  document.getElementById('title').textContent=d.title||'Mi Dashboard';
+  document.getElementById('owner').textContent=d.owner?`de ${d.owner}`:'';
+  document.getElementById('updated').textContent=d.updated||'—';
 
-  const tasks = document.getElementById('tasks');
-  tasks.innerHTML = (d.tasks&&d.tasks.length) ? d.tasks.map(t=>`
-    <div class="item"><div class="l"><span class="t">${t.title}</span>
-    <span class="m">${t.meta||''}</span></div>${tag(t.status,t.due)}</div>`).join('')
-    : '<div class="empty">Sin tareas. Conecta tu fuente o edita el Sheet.</div>';
+  const ed=k=>editable[k];
+  const tasks=document.getElementById('tasks');
+  tasks.innerHTML=(d.tasks&&d.tasks.length)?d.tasks.map((t,i)=>`<div class="item"><div class="l"><span class="t">${esc(t.title)}</span><span class="m">${esc(t.meta||'')} ${t.due?'· '+esc(t.due):''}</span></div><div style="display:flex;align-items:center;gap:4px">${tag(t.status)}${ed('tasks')?`<button class="del" data-del="tasks" data-i="${i}">✕</button>`:''}</div></div>`).join(''):'<div class="empty">Sin tareas.</div>';
 
-  const cal = document.getElementById('calendar');
-  cal.innerHTML = (d.calendar&&d.calendar.length) ? d.calendar.map(e=>`
-    <div class="item"><div class="l"><span class="t">${e.title}</span>
-    <span class="m">${e.meta||''}</span></div></div>`).join('')
-    : '<div class="empty">Sin eventos próximos.</div>';
+  const cal=document.getElementById('calendar');
+  cal.innerHTML=(d.calendar&&d.calendar.length)?d.calendar.map(e=>`<div class="item"><div class="l"><span class="t">${esc(e.title)}</span><span class="m">${esc(e.meta||'')}</span></div></div>`).join(''):'<div class="empty">Sin eventos próximos.</div>';
 
-  const fin = document.getElementById('finance');
-  let html='';
-  if(d.finance&&d.finance.summary){
-    html+='<div class="metrics" style="margin-bottom:12px">'+d.finance.summary.map(s=>`
-      <div class="metric"><div class="v ${s.pos?'pos':'neg'}">${s.v}</div>
-      <div class="k">${s.k}</div></div>`).join('')+'</div>';
-  }
-  if(d.finance&&d.finance.rows){
-    html+=d.finance.rows.map(r=>`<div class="fin-row"><span>${r.label}</span>
-      <span class="amt ${r.pos?'pos':'neg'}">${r.amount}</span></div>`).join('');
-  }
-  fin.innerHTML = html || '<div class="empty">Sin datos financieros.</div>';
+  const fin=document.getElementById('finance');let h='';
+  if(d.finance&&d.finance.summary){h+='<div class="metrics" style="margin-bottom:10px">'+d.finance.summary.map(s=>`<div class="metric"><div class="v ${s.pos?'pos':'neg'}">${esc(s.v)}</div><div class="k">${esc(s.k)}</div></div>`).join('')+'</div>';}
+  if(d.finance&&d.finance.rows){h+=d.finance.rows.map((r,i)=>`<div class="fin-row"><span>${esc(r.label)}</span><span style="display:flex;align-items:center;gap:6px"><span class="amt ${r.pos?'pos':'neg'}">${esc(r.amount)}</span>${ed('finance')?`<button class="del" data-del="finance" data-i="${i}">✕</button>`:''}</span></div>`).join('');}
+  fin.innerHTML=h||'<div class="empty">Sin datos.</div>';
 
-  const met = document.getElementById('metrics');
-  met.innerHTML = (d.metrics&&d.metrics.length) ? d.metrics.map(m=>`
-    <div class="metric"><div class="v">${m.v}</div><div class="k">${m.k}</div>
-    <div class="bar"><span style="width:${m.pct||0}%"></span></div></div>`).join('')
-    : '<div class="empty">Sin métricas.</div>';
+  const met=document.getElementById('metrics');
+  met.innerHTML=(d.metrics&&d.metrics.length)?d.metrics.map((m,i)=>`<div class="metric"><div style="display:flex;justify-content:space-between"><div class="v">${esc(m.v)}</div>${ed('metrics')?`<button class="del" data-del="metrics" data-i="${i}">✕</button>`:''}</div><div class="k">${esc(m.k)}</div><div class="bar"><span style="width:${m.pct||0}%"></span></div></div>`).join(''):'<div class="empty">Sin métricas.</div>';
+
+  wire();
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function wire(){
+  document.querySelectorAll('.edit-btn').forEach(b=>b.onclick=()=>{
+    if(!APPS_SCRIPT_URL){toast("Configura APPS_SCRIPT_URL para editar");return;}
+    const s=b.dataset.sec;editable[s]=!editable[s];
+    document.getElementById('add-'+s).classList.toggle('hidden',!editable[s]);
+    b.textContent=editable[s]?'Listo':'Editar';render(DATA);
+  });
+  document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(b.dataset.add));
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>del(b.dataset.del,+b.dataset.i));
 }
 
-fetch('data.json',{cache:'no-store'})
-  .then(r=>{if(!r.ok)throw 0;return r.json()})
-  .then(render)
-  .catch(()=>render(SAMPLE));
+function post(payload,optimistic){
+  optimistic&&optimistic();render(DATA);
+  if(!APPS_SCRIPT_URL)return;
+  fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)})
+    .then(()=>toast("Guardado en tu Sheet")).catch(()=>toast("No se pudo guardar"));
+}
+function add(sec){
+  if(sec==='tasks'){const t=val('t-title');if(!t)return;const item={title:t,meta:val('t-meta'),status:val('t-status'),due:val('t-due')};
+    post({op:"add",section:"tareas",row:{title:t,meta:val('t-meta'),value:val('t-due'),status:val('t-status')}},()=>DATA.tasks.push(item));clr(['t-title','t-meta','t-due']);}
+  if(sec==='finance'){const l=val('f-label'),v=val('f-value');if(!l)return;
+    post({op:"add",section:"finanzas",row:{title:l,meta:"",value:v,status:""}},()=>DATA.finance.rows.push({label:l,amount:v,pos:!v.startsWith('-')}));clr(['f-label','f-value']);}
+  if(sec==='metrics'){const k=val('m-title'),v=val('m-value'),p=parseInt(val('m-pct'))||0;if(!k)return;
+    post({op:"add",section:"metricas",row:{title:k,meta:String(p),value:v,status:""}},()=>DATA.metrics.push({k,v,pct:p}));clr(['m-title','m-value','m-pct']);}
+}
+function del(sec,i){
+  if(sec==='tasks'){const it=DATA.tasks[i];post({op:"delete",section:"tareas",match:it.title},()=>DATA.tasks.splice(i,1));}
+  if(sec==='finance'){const it=DATA.finance.rows[i];post({op:"delete",section:"finanzas",match:it.label},()=>DATA.finance.rows.splice(i,1));}
+  if(sec==='metrics'){const it=DATA.metrics[i];post({op:"delete",section:"metricas",match:it.k},()=>DATA.metrics.splice(i,1));}
+}
+const val=id=>document.getElementById(id).value.trim();
+const clr=ids=>ids.forEach(id=>document.getElementById(id).value="");
+let tt;function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),2200);}
+
+async function load(){
+  let base=SAMPLE;
+  try{const r=await fetch('data.json',{cache:'no-store'});if(r.ok)base=await r.json();}catch(e){}
+  render(base);
+  if(SHEET_CSV_URL){try{const r=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(r.ok){render(sheetToData(await r.text(),base));}}catch(e){}}
+}
+load();
 </script>
 </body>
 </html>
