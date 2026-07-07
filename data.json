@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "07 Jul 2026, 00:14 UTC",
+  "updated": "07 Jul 2026, 04:57 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,14 +24,6 @@
   ],
   "calendar": [
     {
-      "title": "Introducción a la Biología ",
-      "meta": "lun 6 jul, 15:00"
-    },
-    {
-      "title": "Fisica I",
-      "meta": "lun 6 jul, 17:00"
-    },
-    {
       "title": "Matemática Discreta",
       "meta": "mar 7 jul, 15:00"
     },
@@ -46,6 +38,14 @@
     {
       "title": "Fisica",
       "meta": "jue 9 jul, 09:00"
+    },
+    {
+      "title": "Coloquio Ing Industrial",
+      "meta": "jue 9 jul, 12:00"
+    },
+    {
+      "title": "Fundamentos Ing Industrial",
+      "meta": "jue 9 jul, 15:00"
     }
   ],
   "finance": {
