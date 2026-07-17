@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "17 Jul 2026, 00:03 UTC",
+  "updated": "17 Jul 2026, 04:11 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,14 +24,6 @@
   ],
   "calendar": [
     {
-      "title": "Fundamentos Ing Industrial",
-      "meta": "jue 16 jul, 15:00"
-    },
-    {
-      "title": "Introducción Biología",
-      "meta": "jue 16 jul, 17:00"
-    },
-    {
       "title": "ODONTOLOGO JG",
       "meta": "vie 17 jul · todo el día"
     },
@@ -46,6 +38,14 @@
     {
       "title": "English Composition",
       "meta": "lun 20 jul, 09:00"
+    },
+    {
+      "title": "Introducción a la Biología ",
+      "meta": "lun 20 jul, 15:00"
+    },
+    {
+      "title": "Fisica I",
+      "meta": "lun 20 jul, 17:00"
     }
   ],
   "finance": {
