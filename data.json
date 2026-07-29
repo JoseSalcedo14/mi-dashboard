@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "29 Jul 2026, 00:02 UTC",
+  "updated": "29 Jul 2026, 04:16 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,10 +24,6 @@
   ],
   "calendar": [
     {
-      "title": "Matemática Discreta",
-      "meta": "mar 28 jul, 15:00"
-    },
-    {
       "title": "Contabilidad y Presupuestos",
       "meta": "mar 28 jul, 20:00"
     },
@@ -46,6 +42,10 @@
     {
       "title": "Fundamentos Ing Industrial",
       "meta": "jue 30 jul, 15:00"
+    },
+    {
+      "title": "Introducción Biología",
+      "meta": "jue 30 jul, 17:00"
     }
   ],
   "finance": {
