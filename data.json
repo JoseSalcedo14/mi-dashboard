@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "01 Aug 2026, 00:04 UTC",
+  "updated": "01 Aug 2026, 04:23 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,10 +24,6 @@
   ],
   "calendar": [
     {
-      "title": "Matemática Discreta",
-      "meta": "vie 31 jul, 15:00"
-    },
-    {
       "title": "English Composition",
       "meta": "lun 3 ago, 09:00"
     },
@@ -46,6 +42,10 @@
     {
       "title": "Contabilidad y Presupuestos",
       "meta": "mar 4 ago, 20:00"
+    },
+    {
+      "title": "Ingeniería de Requisitos",
+      "meta": "jue 6 ago, 07:00"
     }
   ],
   "finance": {
