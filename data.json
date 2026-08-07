@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "06 Aug 2026, 15:23 UTC",
+  "updated": "07 Aug 2026, 00:07 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -24,18 +24,6 @@
   ],
   "calendar": [
     {
-      "title": "Ingeniería de Requisitos",
-      "meta": "jue 6 ago, 07:00"
-    },
-    {
-      "title": "Fisica",
-      "meta": "jue 6 ago, 09:00"
-    },
-    {
-      "title": "Coloquio Ing Industrial",
-      "meta": "jue 6 ago, 12:00"
-    },
-    {
       "title": "Fundamentos Ing Industrial",
       "meta": "jue 6 ago, 15:00"
     },
@@ -46,6 +34,18 @@
     {
       "title": "Contabilidad Y Presupuestos",
       "meta": "jue 6 ago, 20:00"
+    },
+    {
+      "title": "Matemática Discreta",
+      "meta": "vie 7 ago, 15:00"
+    },
+    {
+      "title": "English Composition",
+      "meta": "lun 10 ago, 09:00"
+    },
+    {
+      "title": "Introducción a la Biología ",
+      "meta": "lun 10 ago, 15:00"
     }
   ],
   "finance": {
