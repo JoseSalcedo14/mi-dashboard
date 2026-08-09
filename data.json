@@ -1,7 +1,7 @@
 {
   "title": "Mi Dashboard",
   "owner": "Jose",
-  "updated": "08 Aug 2026, 23:34 UTC",
+  "updated": "09 Aug 2026, 02:07 UTC",
   "tasks": [
     {
       "title": "Cerrar propuesta cliente X",
@@ -44,8 +44,8 @@
       "meta": "mar 11 ago, 20:00"
     },
     {
-      "title": "Ingeniería de Requisitos",
-      "meta": "jue 13 ago, 07:00"
+      "title": "Arizona meeting",
+      "meta": "mié 12 ago, 11:00"
     }
   ],
   "finance": {
